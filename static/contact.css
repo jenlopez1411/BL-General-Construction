@@ -1,0 +1,51 @@
+#contact {
+    height: 1000px;
+    position: relative;
+    color: rgb(7, 7, 7);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    color: black;
+    background-color: rgb(255, 255, 255);
+    box-shadow: rgba(0, 0, 0, 3.6);
+}
+
+form {
+    display: flex;
+    flex-flow: column;
+    border: 7px solid rgb(74, 18, 18);
+    padding: 45px;
+    border-radius: 3%;
+}
+
+label {
+    padding: 5px;
+    font-size: 25px;
+    font-family: Charter;
+    font-weight: bold;
+    margin-right: auto;
+}
+
+input, textarea {
+    width: 500px;
+    padding: 10px;
+    border-radius: 15px;
+}
+
+.button {
+    padding: 7px;
+    margin-top: 5px;
+    border-radius: 15px;
+    cursor: pointer;
+    color: white;
+    background-color: rgb(74, 18, 18);
+    font-size: 17px;
+    font-family: Charter;
+    font-weight: bold;
+    width: 25%;
+}
+
+.button:hover {
+    background-color: rgb(136, 90, 90);
+}

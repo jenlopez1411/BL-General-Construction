@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>BL General Construction</title>
+        <link href="static/style.css" rel="stylesheet" type="text/css"/>
+        <link href="static/projects.css" rel="stylesheet" type="text/css"/>
+        <link href="static/contact.css" rel="stylesheet" type="text/css"/>
+
+    </head>
+
+<body>
+    <!-- navigation -->
+     <header>
+        <!-- <h1>BL General Construction Inc.</h1> -->
+        <nav>
+            <div><h1>BL General Construction Inc.</h1></div>
+            <ul>
+                <li><a href=""#>Home</a></li>
+                <li><a href="#projects">Projects</a></li>
+                <li><a href="#contact"#>Contact</a></li>
+
+            </ul>
+        </nav>
+     </header>
+
+     <section class="hero">
+        <div class="overlay"></div>
+        <h2 class="slogan">"Your Vision, Our Construction"</h2>
+        <img src="/static/img/constructionLogo.png" alt="BL General Construction Logo">
+        <h2>BL General Construction Inc.</h2>
+        <p>Remodeling | Garage Renovations | Framing | Drywall | Insulation & Painting | ADUs | New House </p>
+     </section>
+
+     <section id="projects">
+        <div class="slideshow-container">
+            <div class="slide fade">        
+                <img src="/static/img/shelves.jpeg" alt="image 1">
+                <div class="description">This is a picture</div>
+            </div>
+            <div class="slide fade">        
+                <img src="/static/img/constructionBackground.jpg" alt="image 2">
+                <div class="description">This is a picture</div>
+            </div>
+            <div class="slide fade">        
+                <img src="/static/img/shelves.jpeg" alt="image 3">
+                <div class="description">This is a picture</div>
+            </div>
+            <a class=="prev" onclick="changeSlide(-1)">&#10094;</a>
+            <a class=="next" onclick="changeSlide(1)">&#10095;</a>
+        </div>
+
+        <div class="projects-info">
+            <h2>This is the projection information from the pictures.</h2>
+        </div>
+     </section>
+
+     <section id="contact">
+        <form id="contactForm">
+            <label for="name">First Name:</label>
+            <input type="text" id="name" name="name" required>
+
+            <label for="last">Last Name:</label>
+            <input type="text" id="last" name="last" required>
+
+            <label for="phone">Phone Number:</label>
+            <input type="number" id="phone" name="phone" required>
+
+            <label for="email">Email:</label>
+            <input type="email" id="email" name="email" required>
+
+            <label for="message">Message:</label>
+            <textarea id="message" name="message" rows="10" required></textarea>
+            <input class="button" type="submit" value="Send Message">
+        </form>
+     </section>
+    <footer> <p>&copy; 2025 iTelligenceConsulting (iTc) | All Rights Reserved</p></footer>
+    <script src="/static/script/projects.js"></script>
+    <script src="/static/script/contact.js"></script>
+
+</body>
+</html>

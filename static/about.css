@@ -1,0 +1,93 @@
+#about {
+    background-color: #f9f9f9;
+    padding: 40px 20px;
+}
+
+.about1 {
+    max-width: 900px; 
+    margin: auto; 
+    display: flex; 
+    align-items: center; 
+    gap: 30px; 
+    flex-wrap: wrap;
+}
+
+.owner-image {
+    flex: 1 1 200px;
+    text-align: center;
+}
+
+.owner-image img {
+    width: 180px; 
+    height: 180px; 
+    border-radius: 50%; 
+    object-fit: cover; 
+    box-shadow: 0 0 10px rgba(0,0,0,5.1);
+}
+
+.owner-info {
+    flex: 2 1 400px;
+}
+
+.owner-info h2 {
+    margin-bottom: 10px;
+}
+
+.owner-info h3 {
+    margin:0 0 15px;
+}
+
+.owner-info p {
+    line-height: 1.6;
+}
+
+.phone {
+    text-align: center;
+    margin-bottom: 20px;
+}
+.phone p {
+    font-size: 20px;
+    color: #333;
+}
+.phone a {
+    color: #b30000;
+    text-decoration: none;
+}
+
+#submitBtn {
+    background-color: #b22222;
+    color: white;
+    padding: 0.75rem 1.5rem;
+    border: none;
+    border-radius: 8px;
+    font-size: 1rem;
+    cursor: pointer;
+}
+#submitBtn:hover {
+    background-color: rgb(136, 90, 90);
+}
+
+.submit-review {
+    background-color: #fff3e6;
+    box-shadow: 0 0 10px rgba(0,0,0,0.05); 
+    margin: 2rem auto;
+    display: flex;
+    flex-flow: column;
+    /* border: 7px solid rgb(74, 18, 18); */
+    padding: 45px;
+    border-radius: 3%;
+    max-width: 600px;
+}
+.reviews {
+    margin-top: 30px;
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0,0,0,0.05); 
+    margin-top: 40px;
+}
+
+#reviews-submission {
+    margin-top: 30px;
+    max-width: 600px;
+    padding: 30px;
+}

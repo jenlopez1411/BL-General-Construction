@@ -1,51 +1,58 @@
 #contact {
-    height: 1000px;
-    position: relative;
-    color: rgb(7, 7, 7);
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    color: black;
-    background-color: rgb(255, 255, 255);
+    background-color: #f8f9fa;
     box-shadow: rgba(0, 0, 0, 3.6);
 }
 
 form {
     display: flex;
     flex-flow: column;
-    border: 7px solid rgb(74, 18, 18);
+    /* border: 7px solid rgb(74, 18, 18); */
     padding: 45px;
     border-radius: 3%;
 }
-
-label {
-    padding: 5px;
-    font-size: 25px;
-    font-family: Charter;
+.contact-form {
+    max-width: 600px;
+    margin: 2rem auto;
+    background-color: white;
+    padding: 2rem;
+    border-radius: 12px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+}
+.contact-form h3 {
+    font-family: 'Montserrat', sans-serif;
+    margin-bottom: 1rem;
+}
+.contact-form label {
+    display: block;
+    margin-bottom: 0.5rem;
     font-weight: bold;
-    margin-right: auto;
 }
 
 input, textarea {
-    width: 500px;
-    padding: 10px;
-    border-radius: 15px;
+    width: 100%;
+    padding: 0.75rem;
+    margin-bottom: 1rem;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    font-family: 'Open Sans', sans-serif;
 }
 
 .button {
-    padding: 7px;
-    margin-top: 5px;
-    border-radius: 15px;
-    cursor: pointer;
+    background-color: #b22222;
     color: white;
-    background-color: rgb(74, 18, 18);
-    font-size: 17px;
-    font-family: Charter;
-    font-weight: bold;
-    width: 25%;
+    padding: 0.75rem 1.5rem;
+    border: none;
+    border-radius: 8px;
+    font-size: 1rem;
+    cursor: pointer;
 }
 
 .button:hover {
     background-color: rgb(136, 90, 90);
+}
+
+.phone_info {
+    font-size: 24px;
+    position: relative;
+    top: auto;
 }

@@ -5,8 +5,8 @@ from email.mime.text import MIMEText
 app = Flask(__name__)
 
 
-# BOT_TOKEN = "7621892336:AAHsJrltQ_XGJdJhbneXR6MDlrNbgEitxbk"
-# CHAT_ID = "7829040192"
+# BOT_TOKEN = ""
+# CHAT_ID = ""
 # Your email settings
 EMAIL_ADDRESS = "" # enter gmail
 EMAIL_PASSWORD = "" # Use app password, not your Gmail login, look up gmail settings

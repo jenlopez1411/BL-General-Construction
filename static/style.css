@@ -2,7 +2,6 @@ body {
     font-family: Arial, Helvetica, sans-serif;
     margin: 0;
     padding: 0;
-    text-align: center;
 }
 
 header {
@@ -140,9 +139,10 @@ ul li a:hover {
     z-index: 2;
     font-size: 50px;
     font-family: -apple-system-body;
-    animation: highlightAnimation 0.6s ease infinite;
-
 }
+
+/* animation: highlightAnimation 1.0s ease infinite; */
+
 @keyframes highlightAnimation {
     0% {
       background-color: yellow;
@@ -164,6 +164,9 @@ ul li a:hover {
     height: 250px;
 }
 
+.hero p {
+    text-align: center;
+}
 footer {
     background-color: #333;
     color:white;

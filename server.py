@@ -1,13 +1,17 @@
 from flask import Flask, render_template, request, redirect, flash, jsonify
 import requests
-
+import smtplib
+from email.mime.text import MIMEText
 app = Flask(__name__)
 
 
-BOT_TOKEN = ""
-CHAT_ID = ""
+# BOT_TOKEN = "7621892336:AAHsJrltQ_XGJdJhbneXR6MDlrNbgEitxbk"
+# CHAT_ID = "7829040192"
+# Your email settings
+EMAIL_ADDRESS = "" # enter gmail
+EMAIL_PASSWORD = "" # Use app password, not your Gmail login, look up gmail settings
 # Telegram API URL
-TELEGRAM_URL = f'https://api.telegram.org/bot{BOT_TOKEN}/sendMessage'
+# TELEGRAM_URL = f'https://api.telegram.org/bot{BOT_TOKEN}/sendMessage'
 
 # Home Page
 @app.route('/')
@@ -41,28 +45,40 @@ def success():
 
 @app.route('/send_telegram', methods=["POST"])
 def send_telegram():
-    name = request.form.get('name')
-    last = request.form.get('last')
-    email = request.form.get('email')
-    message = request.form.get('message')
-    phone = request.form.get('phone')
+    # name = request.form.get('name')
+    # last = request.form.get('last')
+    # email = request.form.get('email')
+    # message = request.form.get('message')
+    # phone = request.form.get('phone')
 
-    telegram_message = f"Nueva messaje de {name} {last} ({email}) \n Phone Number: {phone} \n\nMessage: {message}"
-    print(name)
-    print(email)
-    print(message)
-    # Send the message to Telegram
-    payload = {
-        'chat_id': CHAT_ID,
-        'text': telegram_message
-    }
-    response = requests.post(TELEGRAM_URL, data=payload)
-    print(response.text)
-    # Check if the message was sent successfully
-    if response.status_code == 200:
-        return jsonify({"success": True, "message": "Message sent to Telegram!"})
-    else:
-        return jsonify({"success": False, "message": "Error sending message to Telegram."})
+    name = request.form['name']
+    last = request.form['last']
+    phone = request.form['phone']
+    email = request.form['email']
+    message = request.form['message']
+    full_message = f"""
+    New Contact Form Submission:
+
+    Name: {name} {last}
+    Phone: {phone}
+    Email: {email}
+    
+    Message:
+    {message}
+    """
+    msg = MIMEText(full_message)
+    msg['Subject'] = 'New Contact Form Message'
+    msg['From'] = EMAIL_ADDRESS
+    msg['To'] = EMAIL_ADDRESS  # You can also send to another address
+    print(msg)
+    # Send the email via Gmail SMTP
+    try:
+        with smtplib.SMTP_SSL('smtp.gmail.com', 465) as smtp:
+            smtp.login(EMAIL_ADDRESS, EMAIL_PASSWORD)
+            smtp.send_message(msg)
+        # return redirect("/thank-you")  # Redirect after success
+    except Exception as e:
+        return f"Something went wrong: {e}"
 
 
 if __name__ == '__main__':

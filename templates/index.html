@@ -5,7 +5,7 @@
         <link href="static/style.css" rel="stylesheet" type="text/css"/>
         <link href="static/projects.css" rel="stylesheet" type="text/css"/>
         <link href="static/contact.css" rel="stylesheet" type="text/css"/>
-
+        <link href="static/about.css" rel="stylesheet" type="text/css"/>
     </head>
 
 <body>
@@ -35,27 +35,46 @@
         <div class="slideshow-container">
             <div class="slide fade">        
                 <img src="/static/img/shelves.jpeg" alt="image 1">
-                <div class="description">This is a picture</div>
             </div>
             <div class="slide fade">        
-                <img src="/static/img/constructionBackground.jpg" alt="image 2">
-                <div class="description">This is a picture</div>
+                <img src="/static/img/Projects/ArchWall.jpeg" alt="image 2">
             </div>
             <div class="slide fade">        
-                <img src="/static/img/shelves.jpeg" alt="image 3">
-                <div class="description">This is a picture</div>
+                <img src="/static/img/Projects/windowHouse.jpeg" alt="image 3">
             </div>
-            <a class=="prev" onclick="changeSlide(-1)">&#10094;</a>
-            <a class=="next" onclick="changeSlide(1)">&#10095;</a>
+            <div class="slide fade">        
+                <img src="/static/img/Projects/ceiling.jpeg" alt="image 4">
+            </div>
+            <a class="prev" onclick="changeSlide(-1)">&#10094;</a>
+            <a class="next" onclick="changeSlide(1)">&#10095;</a>
         </div>
 
+        
         <div class="projects-info">
-            <h2>This is the projection information from the pictures.</h2>
-        </div>
+            <h2>Your Vision, Our Construction</h2>
+            <p>BL General Construction Inc. is a professional construction company showcased through a clean and 
+                informative website that highlights its wide range of services including remodeling, garage renovations, 
+                framing, drywall, insulation, painting, ADU construction, and new home builds. The homepage features a bold 
+                slogan—“Your Vision, Our Construction”—alongside a sleek logo and an overview of offered services. Visitors 
+                can explore a dynamic slideshow of completed projects, giving insight into the company's craftsmanship and 
+                attention to detail. The site also includes a detailed contact section with a user-friendly form, making it easy 
+                for potential clients to get in touch and request estimates or consultations. Designed with both functionality and 
+                visual appeal in mind, the site effectively communicates the company’s commitment to quality and customer satisfaction.</p>
+                <p>
+                    Visitors can explore a dynamic slideshow of completed projects, giving insight into the company's craftsmanship and attention to detail. The site includes a detailed contact section with a user-friendly form for estimates and consultations.
+                  </p>
+            </div>
      </section>
+     <div class="phone">
+        <p> 📞 <strong>Call us:</strong> 
+        <a href="tel:+14087636045" >(408) 763 - 6045</a></p>
+    </div>
+     <section id="contact"  class="contact-form">
+        <!-- <id class="phone_info"><b><p>Contact Us:</b> (831) 235 - 5895 </p> </id> -->
 
-     <section id="contact">
         <form id="contactForm">
+            <!-- <h1><b>How can we help?</b></h1> -->
+            <h3>Contact Us</h3>
             <label for="name">First Name:</label>
             <input type="text" id="name" name="name" required>
 
@@ -72,10 +91,53 @@
             <textarea id="message" name="message" rows="10" required></textarea>
             <input class="button" type="submit" value="Send Message">
         </form>
-     </section>
+    </section>
+
+    <section class="reviews">
+        <form class="submit-review" onsubmit="event.preventDefault(); addReview();">
+            <h3>Leave Review</h3>
+            <label>Your Name:</label><br>
+            <input type="text" id="reviewerName"><br>
+
+            <label>Your Review:</label><br>
+            <textarea id="reviewText"></textarea><br>
+
+            <label>Upload Photo:</label><br>
+            <input type="file" id="reviewPhoto" accept="image/*"><br>
+
+            <button id="submitBtn" type="submit">
+                Submit Review
+              </button>
+        </form>
+    </section>
+    
+      <!-- Display Reviews -->
+  <div id="reviews-submission" style="margin-top: 30px;">
+    <h3>User Reviews</h3>
+  </div>
+
+    <!-- About the Owner Section -->
+    <section id="about">
+        <div class="about1">
+        
+        <!-- Owner Image -->
+        <div class="owner-image">
+            <img src="owner.jpg" alt="Leonardo Lopez">
+        </div>
+    
+        <!-- Owner Info -->
+        <div class="owner-info">
+            <h2>About the Owner</h2>
+            <h3>Leonardo Lopez</h3>
+            <p>
+            <strong>Leonardo Lopez</strong>, the founder and owner of BL General Construction Inc., brings years of hands-on experience and dedication to every project. With a strong focus on quality, professionalism, and client satisfaction, Leonardo leads the team with a passion for building and remodeling homes that reflect each client’s unique vision.
+            </p>
+        </div>
+        </div>
+    </section>
     <footer> <p>&copy; 2025 iTelligenceConsulting (iTc) | All Rights Reserved</p></footer>
     <script src="/static/script/projects.js"></script>
     <script src="/static/script/contact.js"></script>
-
+    <script src="/static/script/review.js"></script>
 </body>
 </html>

@@ -3,7 +3,7 @@ import requests
 import smtplib
 from email.mime.text import MIMEText
 app = Flask(__name__)
-
+#
 # Your email settings
 EMAIL_ADDRESS = "" # enter gmail
 EMAIL_PASSWORD = "" # Use app password, not your Gmail login, look up gmail settings

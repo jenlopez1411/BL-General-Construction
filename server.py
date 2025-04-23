@@ -8,8 +8,10 @@ app = Flask(__name__)
 # BOT_TOKEN = ""
 # CHAT_ID = ""
 # Your email settings
-EMAIL_ADDRESS = "" # enter gmail
-EMAIL_PASSWORD = "" # Use app password, not your Gmail login, look up gmail settings
+EMAIL_ADDRESS = "jennifersophia1411@gmail.com"
+EMAIL_PASSWORD = "klgb ylhi zqef hpia"
+# EMAIL_ADDRESS = "" # enter gmail
+# EMAIL_PASSWORD = "" # Use app password, not your Gmail login, look up gmail settings
 # Telegram API URL
 # TELEGRAM_URL = f'https://api.telegram.org/bot{BOT_TOKEN}/sendMessage'
 
@@ -82,4 +84,4 @@ def send_telegram():
 
 
 if __name__ == '__main__':
-    app.run(debug=True, port=5001)
+    app.run(debug=True, port=5003)

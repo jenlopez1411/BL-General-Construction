@@ -1,5 +1,5 @@
 let slideIndex = 0;
-
+let videoSlideIndex = 0;
 function showSlide(n) {
     let slides = document.querySelectorAll(".slide")
 
@@ -22,8 +22,33 @@ function changeSlide(n) {
 
 function autoSlide() {
     changeSlide(1);
-    setTimeout(autoSlide, 5000);
+    setTimeout(autoSlide, 9000);
 }
 
+
+function showVideoSlide(n) {
+    let slides = document.querySelectorAll(".videoSlide")
+
+    if (n>= slides.length) {
+        videoSlideIndex = 0;
+    }
+    if (n < 0 ) {
+        videoSlideIndex = slides.length - 1;
+    }
+
+    slides.forEach(videoSlide => videoSlide.style.display = "none");
+    slides[videoSlideIndex].style.display = "block"
+}
+function changeVideoSlide(n) {
+    showVideoSlide(videoSlideIndex += n);
+}
+
+function autoVideoSlide() {
+    changeVideoSlide(1);
+    setTimeout(autoVideoSlide, 5000);
+}
 showSlide(slideIndex);
 setTimeout(autoSlide, 3000);
+
+showVideoSlide(videoSlideIndex);
+setTimeout(autoVideoSlide, 3000);

@@ -6,6 +6,8 @@
         <link href="static/projects.css" rel="stylesheet" type="text/css"/>
         <link href="static/contact.css" rel="stylesheet" type="text/css"/>
         <link href="static/about.css" rel="stylesheet" type="text/css"/>
+        <link href="static/review.css" rel="stylesheet" type="text/css"/>
+
     </head>
 
 <body>
@@ -15,129 +17,182 @@
         <nav>
             <div><h1>BL General Construction Inc.</h1></div>
             <ul>
-                <li><a href=""#>Home</a></li>
+                <li><a href="#home">Home</a></li>
                 <li><a href="#projects">Projects</a></li>
                 <li><a href="#contact"#>Contact</a></li>
-
+                <li><a href="#review"#>Review</a></li>         
+                <select id="languageSelector">
+                    <option value="en">English</option>
+                    <option value="es">Spanish</option>
+                </select>
             </ul>
+
+
         </nav>
      </header>
 
-     <section class="hero">
+     <section id="home" class="hero">
         <div class="overlay"></div>
         <h2 class="slogan">"Your Vision, Our Construction"</h2>
         <img src="/static/img/constructionLogo.png" alt="BL General Construction Logo">
         <h2>BL General Construction Inc.</h2>
-        <p>Remodeling | Garage Renovations | Framing | Drywall | Insulation & Painting | ADUs | New House </p>
+
+        <!-- <p>Remodeling | Garage Renovations | Framing | Drywall | Insulation & Painting | ADUs | New House </p> -->
+        <section class="services">
+            <div class="service-column">
+              <p class="service1"></p>
+              <p class="service2"></p>
+            </div>
+            <div class="service-column">
+              <p class="service3"></p>
+              <p class="service4"></p>
+            </div>
+            <div class="service-column">
+              <p class="service5"></p>
+              <p class="service6"></p>
+            </div>
+          </section>
+          
      </section>
 
      <section id="projects">
         <div class="slideshow-container">
             <div class="slide fade">        
-                <img src="/static/img/shelves.jpeg" alt="image 1">
+                <img src="/static/img/Projects/pictures/shelves.jpeg" alt="image 1">
             </div>
             <div class="slide fade">        
-                <img src="/static/img/Projects/ArchWall.jpeg" alt="image 2">
+                <img src="/static/img/Projects/pictures/ArchWall.jpeg" alt="image 2">
             </div>
             <div class="slide fade">        
-                <img src="/static/img/Projects/windowHouse.jpeg" alt="image 3">
+                <img src="/static/img/Projects/pictures/windowHouse.jpeg" alt="image 3">
             </div>
             <div class="slide fade">        
-                <img src="/static/img/Projects/ceiling.jpeg" alt="image 4">
+                <img src="/static/img/Projects/pictures/ceiling.jpeg" alt="image 4">
             </div>
+            {% for i in range(1, 33) %}
+            <div class="slide fade">
+                <img src="{{ url_for('static', filename='img/Projects/pictures/pic' ~ i ~ '.jpeg') }}" alt="image {{ i }}">
+            </div>
+            {% endfor %}
+
             <a class="prev" onclick="changeSlide(-1)">&#10094;</a>
             <a class="next" onclick="changeSlide(1)">&#10095;</a>
         </div>
 
-        
         <div class="projects-info">
-            <h2>Your Vision, Our Construction</h2>
-            <p>BL General Construction Inc. is a professional construction company showcased through a clean and 
-                informative website that highlights its wide range of services including remodeling, garage renovations, 
-                framing, drywall, insulation, painting, ADU construction, and new home builds. The homepage features a bold 
-                slogan—“Your Vision, Our Construction”—alongside a sleek logo and an overview of offered services. Visitors 
-                can explore a dynamic slideshow of completed projects, giving insight into the company's craftsmanship and 
-                attention to detail. The site also includes a detailed contact section with a user-friendly form, making it easy 
-                for potential clients to get in touch and request estimates or consultations. Designed with both functionality and 
-                visual appeal in mind, the site effectively communicates the company’s commitment to quality and customer satisfaction.</p>
-                <p>
-                    Visitors can explore a dynamic slideshow of completed projects, giving insight into the company's craftsmanship and attention to detail. The site includes a detailed contact section with a user-friendly form for estimates and consultations.
+            <h2 class="projectTitle"></h2>
+            <p class="projectDescription1"></p>
+                <p class="projectDescription2">
                   </p>
+        </div>
+        <div class="videos">
+            <div class="videoSlide">        
+                <img src="/static/img/Projects/videos/vid1.mp4" alt="vid 1">
             </div>
+            <div class="videoSlide">        
+                <img src="/static/img/Projects/videos/vid2.mp4" alt="vid 2">
+            </div>
+            <div class="videoSlide">        
+                <img src="/static/img/Projects/videos/vid3.mp4" alt="vid 3">
+            </div>
+            <a class="prevVideo" onclick="changeSlide(-1)">&#10094;</a>
+            <a class="nextVideo" onclick="changeSlide(1)">&#10095;</a>
+        </div>
      </section>
      <div class="phone">
         <p> 📞 <strong>Call us:</strong> 
         <a href="tel:+1" >(xxx) xxx - xxxx</a></p>
     </div>
-     <section id="contact"  class="contact-form">
+<div class="sideBySideContainer">
+    <section class="contactUsDescription">
+        <h1>Contact Us</h1>
+        <p class="descriptionContact"></p>
+        <div class="contact-info">
+            <p class="location"><strong></strong></p>
+            <p class="locationMsg"></p>
+          </div>
+        <p>BL General Construction Inc.</p>
+        <p class="contactPhone"><strong>Call Us:</strong></p><a href="tel:+1" >(xxx) xxx - xxxx</a></p>
+    </section>
+    <section id="contact"  class="contact-form">
         <!-- <id class="phone_info"><b><p>Contact Us:</b> (831) 235 - 5895 </p> </id> -->
 
-        <form id="contactForm">
+        <form id="contactForm" >
             <!-- <h1><b>How can we help?</b></h1> -->
-            <h3>Contact Us</h3>
-            <label for="name">First Name:</label>
+            <h3></h3>
+            <label for="name"></label>
             <input type="text" id="name" name="name" required>
 
-            <label for="last">Last Name:</label>
+            <label for="last"></label>
             <input type="text" id="last" name="last" required>
 
-            <label for="phone">Phone Number:</label>
+            <label for="phone"></label>
             <input type="number" id="phone" name="phone" required>
 
-            <label for="email">Email:</label>
+            <label for="email"></label>
             <input type="email" id="email" name="email" required>
 
-            <label for="message">Message:</label>
+            <label for="message"></label>
             <textarea id="message" name="message" rows="10" required></textarea>
             <input class="button" type="submit" value="Send Message">
         </form>
     </section>
-
-    <section class="reviews">
+</div>
+    <section id="review" class="reviews">
         <form class="submit-review" onsubmit="event.preventDefault(); addReview();">
-            <h3>Leave Review</h3>
-            <label>Your Name:</label><br>
+            <h3></h3>
+            <div id="star-rating" class="star-rating">
+                <p> </p>
+                <span class="star" data-value="1">&#9734;</span>
+                <span class="star" data-value="2">&#9734;</span>
+                <span class="star" data-value="3">&#9734;</span>
+                <span class="star" data-value="4">&#9734;</span>
+                <span class="star" data-value="5">&#9734;</span>
+              </div>
+              
+              <input type="hidden" id="rating" name="rating" value="0">
+            <label class="yourName"></label><br>
             <input type="text" id="reviewerName"><br>
 
-            <label>Your Review:</label><br>
+            <label class="yourReview"></label><br>
             <textarea id="reviewText"></textarea><br>
 
-            <label>Upload Photo:</label><br>
+            <label class="uploadPhoto"></label><br>
             <input type="file" id="reviewPhoto" accept="image/*"><br>
 
-            <button id="submitBtn" type="submit">
-                Submit Review
-              </button>
+            <button id="submitBtn" type="submit"></button>
         </form>
     </section>
     
       <!-- Display Reviews -->
   <div id="reviews-submission" style="margin-top: 30px;">
-    <h3>User Reviews</h3>
+    <h3></h3>
   </div>
 
     <!-- About the Owner Section -->
-    <section id="about">
-        <div class="about1">
+    <!-- <section id="about">
+        <div class="about1"> -->
         
         <!-- Owner Image -->
-        <div class="owner-image">
+        <!-- <div class="owner-image">
             <img src="owner.jpg" alt="Leonardo Lopez">
-        </div>
+        </div> -->
     
         <!-- Owner Info -->
-        <div class="owner-info">
+        <!-- <div class="owner-info">
             <h2>About the Owner</h2>
             <h3>Leonardo Lopez</h3>
             <p>
             <strong>Leonardo Lopez</strong>, the founder and owner of BL General Construction Inc., brings years of hands-on experience and dedication to every project. With a strong focus on quality, professionalism, and client satisfaction, Leonardo leads the team with a passion for building and remodeling homes that reflect each client’s unique vision.
             </p>
-        </div>
-        </div>
-    </section>
+        </div> -->
+        <!-- </div>
+    </section> -->
     <footer> <p>&copy; 2025 iTelligenceConsulting (iTc) | All Rights Reserved</p></footer>
     <script src="/static/script/projects.js"></script>
     <script src="/static/script/contact.js"></script>
     <script src="/static/script/review.js"></script>
+    <script src="/static/script/translate.js"></script>
+
 </body>
 </html>

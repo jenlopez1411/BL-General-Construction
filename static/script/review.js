@@ -2,8 +2,10 @@ function addReview() {
     const name = document.getElementById("reviewerName").value;
     const review = document.getElementById("reviewText").value;
     const photoInput = document.getElementById("reviewPhoto");
+    const rating = document.getElementById('rating').value;
     const file = photoInput.files[0];
-
+    console.log("hello sophia")
+    console.log(rating);
     if (name && review) {
       const reviewContainer = document.getElementById("reviews-submission");
       const newReview = document.createElement("div");
@@ -12,6 +14,12 @@ function addReview() {
       newReview.style.border = "1px solid #ccc";
       newReview.style.borderRadius = "8px";
       newReview.style.backgroundColor = "rgb(245, 245, 245)";
+
+      // Create stars based on rating
+      let starRatingHTML = "";
+      for (let star = 1; star <= 5; star++) {
+          starRatingHTML += star <= rating ? "&#9733;" : "&#9734;";
+      }
 
       let imageTag = "";
       if (file) {
@@ -23,7 +31,10 @@ function addReview() {
         };
         reader.readAsDataURL(file);
       } else {
-        newReview.innerHTML = `<strong>${name}</strong><p>${review}</p>`;
+        newReview.innerHTML = `<strong>${name}</strong>            
+              <div id="starRating">
+              ${starRatingHTML}
+              </div><p>${review}</p>`;
         reviewContainer.appendChild(newReview);
       }
 
@@ -32,3 +43,22 @@ function addReview() {
       document.getElementById("reviewPhoto").value = "";
     }
   }
+
+document.addEventListener('DOMContentLoaded', () => {
+    const stars = document.querySelectorAll('.star');
+    const ratingInput = document.getElementById('rating');
+    stars.forEach((star) => {
+      star.addEventListener('click', () => {
+        const rating = star.getAttribute('data-value');
+        ratingInput.value = rating;
+        stars.forEach((s) => {
+          if (s.getAttribute('data-value') <= rating) {
+            s.classList.add('selected');
+          } else {
+            s.classList.remove('selected');
+          }
+        });
+      });
+    });
+
+});

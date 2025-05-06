@@ -32,7 +32,7 @@ def contact():
         name = request.form['name']
         email = request.form['email']
         message = request.form['message']
-        
+
         # Print form data (can be saved to a database or emailed)
         print(f"New Message from {name} ({email}): {message}")
         
@@ -84,4 +84,5 @@ def send_telegram():
 
 
 if __name__ == '__main__':
-    app.run(debug=True, port=5003)
+    app.run(debug=True, port=5008)
+

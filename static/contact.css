@@ -11,13 +11,16 @@ form {
     border-radius: 3%;
 }
 .contact-form {
-    max-width: 600px;
-    margin: 2rem auto;
+    max-width: 700px;
+    position: relative;
+
+    /* margin: 2rem auto; */
     background-color: white;
     padding: 2rem;
     border-radius: 12px;
     box-shadow: 0 2px 8px rgba(0,0,0,0.05);
 }
+
 .contact-form h3 {
     font-family: 'Montserrat', sans-serif;
     margin-bottom: 1rem;
@@ -34,9 +37,12 @@ input, textarea {
     margin-bottom: 1rem;
     border: 1px solid #ccc;
     border-radius: 8px;
+    font-size: 18px;
     font-family: 'Open Sans', sans-serif;
 }
-
+input, text {
+    font-size: 18px;
+}
 .button {
     background-color: #b22222;
     color: white;
@@ -55,4 +61,36 @@ input, textarea {
     font-size: 24px;
     position: relative;
     top: auto;
+}
+
+.sideBySideContainer {
+    display: flex;
+    gap: 20px; /* spacing between sections */
+    padding: 20px;
+    justify-content: center;
+  }
+  
+  .contact-form,
+  .contactUsDescription {
+    flex: 1; /* each takes 50% of container */
+    padding: 20px;
+    box-sizing: border-box;
+
+  }
+  
+  .contactUsDescription {
+    max-width: 800px;
+  }
+  @media (max-width: 768px) {
+    .side-by-side-container {
+      flex-direction: column;
+    }
+  }
+  
+.contactUsDescription p{
+    font-size: 22px;
+}
+
+.contactUsDescription a{
+    font-size: 22px;
 }

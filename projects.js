@@ -54,7 +54,7 @@ showVideoSlide(videoSlideIndex);
 setTimeout(autoVideoSlide, 3000);
 
 const gallery = document.getElementById("slide fade");
-for (let i = 0; i < 32; i++) {
+for (let i = 1; i <= 33; i++) {
     const img = document.createElement("img");
     img.src = `pic${i}.jpeg`;
     img.alt = `Image ${i}`;

@@ -105,3 +105,7 @@
 .prevVideo:hover, .nextVideo:hover {
     background-color: black;
 }
+
+.projectDescription1 , .projectDescription2{
+    font-size: 14px;
+}

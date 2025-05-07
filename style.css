@@ -132,7 +132,6 @@ ul li a:hover {
     justify-content: center;
     align-items: center;
     color: black;
-    min-width: 100vh;
     height: auto;
     padding-top: 120px;
     /* text-shadow: 2px 2px 4px black; */

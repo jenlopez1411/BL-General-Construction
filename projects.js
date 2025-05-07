@@ -53,7 +53,7 @@ setTimeout(autoSlide, 3000);
 showVideoSlide(videoSlideIndex);
 setTimeout(autoVideoSlide, 3000);
 
-const gallery = document.getElementById("slide");
+const gallery = document.querySelector("slideshow-container");
 for (let i = 1; i <= 33; i++) {
     const img = document.createElement("img");
     img.src = `pic${i}.jpeg`;

@@ -216,17 +216,17 @@ footer {
       margin-top: 3rem;
       text-align: center;
     }
-    .hero {
+    /* .hero {
         padding-top: 140px; /* ensures space under the fixed nav */
-      }
+      /* } */
     
-      .hero h2 {
+      /* .hero h2 {
         font-size: 1.5rem;
       }
     
       .hero img {
         height: 180px;
         width: auto;
-      }
+      } */
   }
   

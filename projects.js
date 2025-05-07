@@ -53,7 +53,7 @@ setTimeout(autoSlide, 3000);
 showVideoSlide(videoSlideIndex);
 setTimeout(autoVideoSlide, 3000);
 
-const slideShow = document.querySelector("slideshow-container");
+const slideShow = document.querySelector(".slideshow-container");
 for (let i = 1; i <= 33; i++) {
     const slideDiv = document.createElement("div");
     slideDiv.className = "slide fade";
@@ -62,8 +62,8 @@ for (let i = 1; i <= 33; i++) {
     const img = document.createElement("img");
     img.src = `pic${i}.jpeg`;
     img.alt = `Image ${i}`;
-    img.style.width = "200px";
-    img.style.margin = "10px";
+    // img.style.width = "200px";
+    // img.style.margin = "10px";
     slideDiv.appendChild(img);
     slideShow.appendChild(slideDiv);
 }

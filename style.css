@@ -169,6 +169,8 @@ ul li a:hover {
 .slogan {
     font-family: Baskerville;
     font-style: italic;
+    margin-top: 2rem;
+    padding-top: 1rem;
 }
 .hero img {
     position: relative;
@@ -202,5 +204,12 @@ footer {
   
   .service-column {
     max-width: 900px;
+  }
+  @media screen and (max-width: 768px) {
+    .slogan {
+      font-size: 1.2rem; /* smaller text for mobile */
+      margin-top: 3rem;
+      text-align: center;
+    }
   }
   

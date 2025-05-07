@@ -123,7 +123,7 @@ ul li a:hover {
 }
 
 .hero {
-    background: url("/static/img/constructionBackground.jpg") no-repeat center center/cover;
+    background: url("constructionBackground.jpg") no-repeat center center/cover;
     height: 1000px;
     position: relative;
     color: rgb(7, 7, 7);

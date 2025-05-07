@@ -6,9 +6,9 @@
         <link rel="icon" type="image/x-icon" href="/icon.JPG">
         <link href="style.css" rel="stylesheet" type="text/css"/>
         <link href="projects.css" rel="stylesheet" type="text/css"/>
-        <link href="/contact.css" rel="stylesheet" type="text/css"/>
-        <link href="/about.css" rel="stylesheet" type="text/css"/>
-        <link href="/review.css" rel="stylesheet" type="text/css"/>
+        <link href="contact.css" rel="stylesheet" type="text/css"/>
+        <link href="about.css" rel="stylesheet" type="text/css"/>
+        <link href="review.css" rel="stylesheet" type="text/css"/>
 
     </head>
 
@@ -60,20 +60,20 @@
      <section id="projects">
         <div class="slideshow-container">
             <div class="slide fade">        
-                <img src="/shelves.jpeg" alt="image 1">
+                <img src="shelves.jpeg" alt="image 1">
             </div>
             <div class="slide fade">        
-                <img src="/ArchWall.jpeg" alt="image 2">
+                <img src="ArchWall.jpeg" alt="image 2">
             </div>
             <div class="slide fade">        
-                <img src="/windowHouse.jpeg" alt="image 3">
+                <img src="windowHouse.jpeg" alt="image 3">
             </div>
             <div class="slide fade">        
-                <img src="/ceiling.jpeg" alt="image 4">
+                <img src="ceiling.jpeg" alt="image 4">
             </div>
             {% for i in range(1, 33) %}
             <div class="slide fade">
-                <img src="{{ url_for('static', filename='/pic' ~ i ~ '.jpeg') }}" alt="image {{ i }}">
+                <img src="{{ url_for('static', filename='pic' ~ i ~ '.jpeg') }}" alt="image {{ i }}">
             </div>
             {% endfor %}
 
@@ -89,13 +89,13 @@
         </div>
         <div class="videos">
             <div class="videoSlide">        
-                <img src="/vid1.mp4" alt="vid 1">
+                <img src="vid1.mp4" alt="vid 1">
             </div>
             <div class="videoSlide">        
-                <img src="/vid2.mp4" alt="vid 2">
+                <img src="vid2.mp4" alt="vid 2">
             </div>
             <div class="videoSlide">        
-                <img src="/vid3.mp4" alt="vid 3">
+                <img src="vid3.mp4" alt="vid 3">
             </div>
             <a class="prevVideo" onclick="changeSlide(-1)">&#10094;</a>
             <a class="nextVideo" onclick="changeSlide(1)">&#10095;</a>
@@ -191,10 +191,10 @@
         <!-- </div>
     </section> -->
     <footer> <p>&copy; 2025 iTelligenceConsulting (iTc) | All Rights Reserved</p></footer>
-    <script src="/projects.js"></script>
-    <script src="/contact.js"></script>
-    <script src="/review.js"></script>
-    <script src="/translate.js"></script>
+    <script src="projects.js"></script>
+    <script src="contact.js"></script>
+    <script src="review.js"></script>
+    <script src="translate.js"></script>
 
 </body>
 </html>

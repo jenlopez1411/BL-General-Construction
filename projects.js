@@ -55,10 +55,15 @@ setTimeout(autoVideoSlide, 3000);
 
 const gallery = document.querySelector("slideshow-container");
 for (let i = 1; i <= 33; i++) {
+    const slideDiv = document.createElement("div");
+    slideDiv.className = "slide fade";
+    slideDiv.style.display = "none";
+
     const img = document.createElement("img");
     img.src = `pic${i}.jpeg`;
     img.alt = `Image ${i}`;
     img.style.width = "200px";
     img.style.margin = "10px";
-    gallery.appendChild(img);
+    slideDiv.appendChild(img);
+    slideDiv.appendChild(img);
 }

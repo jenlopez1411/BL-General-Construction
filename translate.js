@@ -1,6 +1,6 @@
 let translations = {};
       //   "services": "Remodelación | Renovaciones de Garaje | Estructuras | Paneles de Yeso | Aislamiento y Pintura | ADUs | Casa Nueva",
-fetch('/static/json/translations.json')
+fetch('translations.json')
 .then(response => response.json())
 .then(data=> {
     translations = data;

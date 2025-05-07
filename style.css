@@ -208,8 +208,10 @@ footer {
   .service-column {
     max-width: 900px;
   }
-  @media screen and (max-width: 768px) {
+  @media (max-width: 768px) {
     .slogan {
+      flex-direction: column;
+        
       font-size: 1.2rem; /* smaller text for mobile */
       margin-top: 3rem;
       text-align: center;

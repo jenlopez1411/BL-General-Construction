@@ -18,13 +18,13 @@ This project is a responsive and user-friendly website for BL General Constructi
 
 # Screenshots
 1. Home
-<img width="1728" alt="Screenshot 2025-04-23 at 3 38 20 PM" src="https://github.com/user-attachments/assets/d0d3f440-1149-4e23-a4f0-b2b3eafc3f21" />
-2. Projects
-<img width="1728" alt="Screenshot 2025-04-23 at 3 41 33 PM" src="https://github.com/user-attachments/assets/fba2d5eb-8da6-4451-8028-0d31a01b19c7" />
-3. Contact
-<img width="1728" alt="Screenshot 2025-04-23 at 3 41 59 PM" src="https://github.com/user-attachments/assets/cae0f2af-0901-4211-8376-6c35a92fe48c" />
-4. Submit Review
-<img width="1728" alt="Screenshot 2025-04-23 at 3 44 59 PM" src="https://github.com/user-attachments/assets/0decfeb8-c066-4e3f-bd54-3f2d3ca77aa9" />
-5. Reviews
+
+3. Projects
+<img width="2056" alt="Screenshot 2025-05-06 at 6 55 39 PM" src="https://github.com/user-attachments/assets/f5ed307b-f89a-448f-9df1-384ac0a732cf" />
+4. Contact
+<img width="2056" alt="Screenshot 2025-05-06 at 6 55 50 PM" src="https://github.com/user-attachments/assets/6bb30beb-257d-4c8c-aef5-255777636114" />
+5. Submit Review
+<img width="2056" alt="Screenshot 2025-05-06 at 6 56 03 PM" src="https://github.com/user-attachments/assets/e346d391-62e5-4ccd-9851-8f17aeff003a" />
+6. Reviews
 <img width="1728" alt="Screenshot 2025-04-23 at 3 45 26 PM" src="https://github.com/user-attachments/assets/7a20bda0-a2bf-4a8d-927a-53245525329e" />
 

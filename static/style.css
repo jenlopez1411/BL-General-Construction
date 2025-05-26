@@ -15,50 +15,6 @@ header {
     display: inline-flex;
 }
 
-/* nav {
-    display: flex;
-    align-items: center;
-    justify-content: space-between; 
-    padding: 15px 30px;
-    background: white;
-}
-
-ul {
-    list-style: none;                                                                                               
-    display: flex;
-    gap: 20px;
-    margin-left: auto; 
-    padding: 0;
-}
-
-ul li {
-    display: inline-block;
-}
-
-ul li a {
-    text-decoration: none;
-    color: white;
-    background-color: rgb(1, 100, 1);
-    padding: 10px 20px;
-    border-radius: 5px;
-    font-weight: bold;
-    transition: 0.3s;
-}
-
-ul li a:hover {
-    background-color: rgb(107, 132, 107);
-} */
-/* nav ul li {
-    display: inline;
-    margin: 0 15px;
-}
-
-nav ul li a {
-    text-decoration: none;
-    font-weight: bold;
-    color: black;
-} */
-
 nav {
     display: flex;
     align-items: center;
@@ -169,6 +125,8 @@ ul li a:hover {
 .slogan {
     font-family: Baskerville;
     font-style: italic;
+    font-size: 2rem;         /* Adjust font size for readability */
+    margin: 5rem 0; 
 }
 .hero img {
     position: relative;
@@ -204,3 +162,17 @@ footer {
     max-width: 900px;
   }
   
+@keyframes popIn {
+    0% {
+        transform: scale(0.8);
+        opacity: 0;
+    }
+    100% {
+        transform: scale(1);
+        opacity: 1;
+    }
+}
+
+.pop-in {
+    animation: popIn 0.8s ease-out;
+}

@@ -1,48 +1,153 @@
-function addReview() {
-    const name = document.getElementById("reviewerName").value;
-    const review = document.getElementById("reviewText").value;
-    const photoInput = document.getElementById("reviewPhoto");
-    const rating = document.getElementById('rating').value;
-    const file = photoInput.files[0];
-    console.log("hello sophia")
-    console.log(rating);
-    if (name && review) {
-      const reviewContainer = document.getElementById("reviews-submission");
-      const newReview = document.createElement("div");
-      newReview.style.marginTop = "15px";
-      newReview.style.padding = "15px";
-      newReview.style.border = "1px solid #ccc";
-      newReview.style.borderRadius = "8px";
-      newReview.style.backgroundColor = "rgb(245, 245, 245)";
+let db;
+const ADMIN_PASSWORD = "secret123"; // Change this to a secure password
+let isAdmin = false;
 
-      // Create stars based on rating
+window.onload = function () {
+
+  const request = indexedDB.open("ReviewsDB", 1);
+
+  request.onerror = function (event) {
+    console.error("Database error:", event.target.error);
+  };
+
+  request.onsuccess = function (event) {
+    db = event.target.result;
+    loadReviews();
+  };
+
+  request.onupgradeneeded = function (event) {
+    db = event.target.result;
+    const store = db.createObjectStore("reviews", {
+      keyPath: "id",
+      autoIncrement: true
+    });
+    store.createIndex("name", "name", { unique: false });
+  };
+};
+
+function addReview() {
+  const name = document.getElementById("reviewerName").value;
+  const text = document.getElementById("reviewText").value;
+  const rating = document.getElementById("rating").value;
+
+  const photoInput = document.getElementById("reviewPhoto");
+  const file = photoInput.files[0];
+  const reader = new FileReader();
+
+  reader.onload = function (event) {
+    const review = {
+      name: name,
+      text: text,
+      rating: rating,
+      photo: event.target.result || null,
+      date: new Date().toISOString()
+    };
+
+    const transaction = db.transaction(["reviews"], "readwrite");
+    const store = transaction.objectStore("reviews");
+    store.add(review);
+
+    transaction.oncomplete = () => {
+      loadReviews();
+      document.querySelector(".submit-review").reset();
+      document.querySelectorAll('.star').forEach(star => {
+        star.classList.remove('selected');
+      });
+      
+    };
+  };
+
+  if (file) {
+    reader.readAsDataURL(file); // Convert image to base64
+  } else {
+    reader.onload({ target: { result: null } }); // fallback
+  }
+
+}
+
+function loadReviews() {
+  const container = document.getElementById("reviews-submission");
+  container.innerHTML = "<h3>Reviews</h3>";
+
+  const transaction = db.transaction(["reviews"], "readonly");
+  const store = transaction.objectStore("reviews");
+  const request = store.openCursor();
+
+  request.onsuccess = function (event) {
+    const cursor = event.target.result;
+    if (cursor) {
+      const review = cursor.value;
+      const div = document.createElement("div");
+      div.classList.add("review-box");
+
       let starRatingHTML = "";
       for (let star = 1; star <= 5; star++) {
-          starRatingHTML += star <= rating ? "&#9733;" : "&#9734;";
+        starRatingHTML += star <= review.rating ? "&#9733;" : "&#9734;";
       }
+      let html = `
+        <h4>${review.name}</h4>
+        <p><strong>Rating:</strong> ${starRatingHTML}</p>
+        <p>${review.text}</p>
+        ${review.photo ? `<img src="${review.photo}" alt="review photo" style="max-width:350px;"/>` : ""}
+        <hr/>
+      `;
+      
+      if(isAdmin) {
+        html += `<button onclick="deleteReview(${review.id})">Delete Review</button>`;
 
-      let imageTag = "";
-      if (file) {
-        const reader = new FileReader();
-        reader.onload = function (e) {
-          imageTag = `<img src="${e.target.result}" alt="Review Photo" style="max-width: 300px; margin-top: 10px; border-radius: 5px;">`;
-          newReview.innerHTML = `<strong>${name}</strong><p>${review}</p>${imageTag}`;
-          reviewContainer.appendChild(newReview);
-        };
-        reader.readAsDataURL(file);
-      } else {
-        newReview.innerHTML = `<strong>${name}</strong>            
-              <div id="starRating">
-              ${starRatingHTML}
-              </div><p>${review}</p>`;
-        reviewContainer.appendChild(newReview);
       }
+      html += "<hr/>"
+      div.innerHTML = html;
 
-      document.getElementById("reviewerName").value = "";
-      document.getElementById("reviewText").value = "";
-      document.getElementById("reviewPhoto").value = "";
+      container.appendChild(div);
+      cursor.continue();
+
     }
+  };
+}
+
+function deleteReview(id) {
+  if (!isAdmin) {
+    const input = prompt("Enter admin password:");
+    if (input !== ADMIN_PASSWORD) {
+      alert("Incorrect password.");
+      return;
+    }
+    isAdmin = true;
   }
+
+  const transaction = db.transaction(["reviews"], "readwrite");
+  const store = transaction.objectStore("reviews");
+  const request = store.delete(id);
+
+  request.onsuccess = function () {
+    console.log("Review deleted:", id);
+    loadReviews(); // Refresh UI
+  };
+
+  request.onerror = function (event) {
+    console.error("Error deleting review:", event.target.error);
+  };
+}
+
+document.getElementById("adminLoginBtn").addEventListener("click", () => {
+  const input = prompt("Enter admin password:");
+  if (input === ADMIN_PASSWORD) {
+    isAdmin = true;
+    alert("Admin mode enabled.");
+    document.getElementById("adminLogoutBtn").style.display = "inline";
+    loadReviews(); // reload to show delete buttons
+  } else {
+    alert("Incorrect password.");
+  }
+});
+
+document.getElementById("adminLogoutBtn").addEventListener("click", () => {
+  isAdmin = false;
+  alert("Logged out of admin mode.");
+  document.getElementById("adminLogoutBtn").style.display = "none";
+  loadReviews(); // will hide delete buttons
+});
 
 document.addEventListener('DOMContentLoaded', () => {
     const stars = document.querySelectorAll('.star');

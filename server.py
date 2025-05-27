@@ -8,8 +8,8 @@ app = Flask(__name__)
 # BOT_TOKEN = ""
 # CHAT_ID = ""
 # Your email settings
-EMAIL_ADDRESS = "jennifersophia1411@gmail.com"
-EMAIL_PASSWORD = "klgb ylhi zqef hpia"
+EMAIL_ADDRESS = "blconstruction1981@gmail.com"
+EMAIL_PASSWORD = "drbi rguk ikso xxpd"
 # EMAIL_ADDRESS = "" # enter gmail
 # EMAIL_PASSWORD = "" # Use app password, not your Gmail login, look up gmail settings
 # Telegram API URL
@@ -36,7 +36,7 @@ def contact():
         # Print form data (can be saved to a database or emailed)
         print(f"New Message from {name} ({email}): {message}")
         
-        return redirect('/success')  # Redirect after submission
+        return 'passed'  # Redirect after submission
     return render_template('contact.html')
 
 # Success Page
@@ -72,13 +72,13 @@ def send_telegram():
     msg['Subject'] = 'New Contact Form Message'
     msg['From'] = EMAIL_ADDRESS
     msg['To'] = EMAIL_ADDRESS  # You can also send to another address
-    print(msg)
+
     # Send the email via Gmail SMTP
     try:
         with smtplib.SMTP_SSL('smtp.gmail.com', 465) as smtp:
             smtp.login(EMAIL_ADDRESS, EMAIL_PASSWORD)
             smtp.send_message(msg)
-        # return redirect("/thank-you")  # Redirect after success
+        return jsonify(success=True) # Redirect after success
     except Exception as e:
         return f"Something went wrong: {e}"
 

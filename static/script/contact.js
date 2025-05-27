@@ -1,6 +1,7 @@
 document.getElementById("contactForm").addEventListener("submit", function(event) {
     event.preventDefault();
 
+    const form = this;
     const formData = new FormData(this);
 
     // Make an AJAX request to send the form data to the Flask backend
@@ -12,6 +13,7 @@ document.getElementById("contactForm").addEventListener("submit", function(event
     .then(data => {
         if (data.success) {
             console.log("Successful")
+            form.reset();
             alert("Message sent successfully!");
         } else {
             console.log("Error");

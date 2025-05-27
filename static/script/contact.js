@@ -11,10 +11,12 @@ document.getElementById("contactForm").addEventListener("submit", function(event
     .then(response => response.json())
     .then(data => {
         if (data.success) {
+            console.log("Successful")
             alert("Message sent successfully!");
         } else {
-            alert("Error: " + data.message);
+            console.log("Error");
+            alert("Error1: " + data.message);
         }
     })
-    .catch(error => alert("Error: " + error));
+    .catch(error => alert("Error2: " + error));
 });

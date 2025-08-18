@@ -23,11 +23,34 @@ nav {
     background: white;
     box-shadow: 0px 4px 10px rgba(0, 0, 0, 3.2);
     width: 97%;
-    height: 5%;
+    max-height: 103px;
+    /* height: 5%; */
     position: fixed; /* Stays at the top */
     top: 0;
     left: 0;
     z-index: 1000;
+}
+
+.header-title {
+    font-size: 24px;
+    font-family: 'tahoma';
+}
+.top-bar {
+    background-color: white; /* dark background */
+    color: black;
+    text-align: center;
+    padding: 5px 0;
+    font-size: 20px;
+    font-family: Arial, sans-serif;
+}
+
+.top-bar a {
+    color: black;
+    text-decoration: none;
+}
+
+.top-bar a:hover {
+    text-decoration: underline;
 }
 
 /* Logo Styling */
@@ -66,6 +89,10 @@ ul li a:hover {
     background-color: rgb(136, 90, 90);
     transform: scale(1.05);
 }
+#hero {
+    margin-bottom: 2rem;
+    position: relative;
+}
 
 #languageSelector {
     border-radius: 22px;
@@ -78,20 +105,56 @@ ul li a:hover {
     transform: scale(1.05);
 }
 
-.hero {
-    background: url("/static/img/constructionBackground.jpg") no-repeat center center/cover;
-    height: 1000px;
+
+.image-container {
+    width: 100%;
+    height: 100vh; /* Full height of the browser window */
     position: relative;
-    color: rgb(7, 7, 7);
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    color: black;
-    /* text-shadow: 2px 2px 4px black; */
+    overflow: hidden;
+}
+#home {
+    /* margin-bottom: 2rem; */
+    position: relative;
+        background: transparent;
+    background-color: transparent;
+}
+.overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  background-color: rgba(0, 0, 0, 0.7); /* or similar */
 }
 
-.hero::before{
+.home img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover ; /* Cover entire area without distortion */
+    display: block;
+}
+
+.main {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    /* opacity: 0; */
+    z-index: 0;
+    transition: opacity 1.5s ease-in-out;  
+}
+.main img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Cover entire area without distortion */
+    display: block;
+}
+
+.main.active {
+    opacity: 1;
+    z-index: 1;
+}
+
+.image-home::before{
     content: "";
     position: absolute;
     width: 100%;
@@ -109,18 +172,11 @@ ul li a:hover {
     font-family: -apple-system-body;
 }
 
-/* animation: highlightAnimation 1.0s ease infinite; */
-
 @keyframes highlightAnimation {
     0% {
       background-color: yellow;
     }
-    /* 50% {
-      background-color: rgba(255, 255, 0, 0.5);
-    }
-    100% {
-      background-color: yellow;
-    } */
+
   }
 .slogan {
     font-family: Baskerville;
@@ -128,11 +184,7 @@ ul li a:hover {
     font-size: 2rem;         /* Adjust font size for readability */
     margin: 5rem 0; 
 }
-.hero img {
-    position: relative;
-    z-index: 2;
-    height: 250px;
-}
+
 
 .hero p {
     text-align: center;
@@ -176,3 +228,138 @@ footer {
 .pop-in {
     animation: popIn 0.8s ease-out;
 }
+
+.hamburger {
+    display: none;
+    font-size: 30px;
+    cursor: pointer;
+}
+
+/* For mobile */
+
+@media (max-width: 1400px) {
+    .hamburger {
+        display: block;
+        padding-right: 50px;
+        font-size: 35px;
+    }
+
+    .nav-links {
+        display: none;
+        position: absolute;
+        top: 100%;
+        right: 0;
+        width: 100%;
+        background-color: rgb(185, 183, 183);
+        transition: all 0.3s ease;
+        box-shadow: 0px 8px 10px rgba(0, 0, 0, 0.8);
+    }
+
+    .nav-links ul {
+        flex-direction: column;
+        align-items: center;
+        gap: 25px;
+        padding: 20px 0;
+    }
+
+    .nav-links.show {
+        display: block;
+    }
+
+    /* nav {
+        flex-direction: column;
+        align-items: flex-start;
+    } */
+
+    /* .logo {
+        margin-left: 10px;
+    } */
+     
+}
+
+@media (max-width: 1000px) {
+    #projects {
+        flex-direction: column;
+        padding: 2rem 1rem;
+        align-items: center;
+    }
+}
+
+@media (max-width: 2000px) {
+  .company-name {
+    top: -274px;
+  }
+
+  .slogan {
+    position: relative;
+    top: 55px;
+
+  }
+
+  .services {
+    position: relative;
+    top: -357px;
+  }
+
+  .logo-w-slogan {
+    height: 1008px;
+  }
+
+  .logo-img {
+    width: 80%;
+    top: -135px;
+    position: relative;
+  }
+
+  .service-column p {
+    font-size: 44px;
+  }
+}
+
+
+.logo-w-slogan {
+    position: absolute;
+    top: 55%; /* vertically center closer to the top */
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    z-index: 2;
+    max-width: 1000px;
+    width: 90%;
+    padding: 20px;
+    color: rgba(255, 255, 255, 1);
+}
+
+
+.logo-img {
+    max-width: 600px;
+    width: 100%;
+    height: auto;
+    margin: 1rem auto;
+    display: block;
+
+  filter: brightness(0) invert(1);
+
+}
+
+.company-name {
+    font-size: 2rem;
+    font-weight: bold;
+    margin-top: 10px;
+}
+
+.slogan {
+    font-family: Baskerville, serif;
+    font-style: italic;
+    font-size: 2rem;
+    margin-bottom: 1rem;
+}
+
+.services {
+    /* position: relative;
+    z-index: 2;
+    padding: 15rem 0; */
+    margin-top: 2rem;
+}
+
+

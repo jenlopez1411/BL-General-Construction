@@ -1,6 +1,7 @@
+let counter = 0;
+
 document.getElementById("contactForm").addEventListener("submit", function(event) {
     event.preventDefault();
-
     const form = this;
     const formData = new FormData(this);
 
@@ -13,8 +14,10 @@ document.getElementById("contactForm").addEventListener("submit", function(event
     .then(data => {
         if (data.success) {
             console.log("Successful")
+            console.log("Succesfully to opoen website!")
             form.reset();
-            alert("Message sent successfully!");
+            counter += 1;
+            alert("Message sent successfully! Please wait patienly while someone review your requests.");
         } else {
             console.log("Error");
             alert("Error1: " + data.message);
@@ -22,3 +25,8 @@ document.getElementById("contactForm").addEventListener("submit", function(event
     })
     .catch(error => alert("Error2: " + error));
 });
+
+function toggleMenu() {
+    const nav = document.getElementById("navLinks");
+    nav.classList.toggle("show")
+}

@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
     <head>
-        <title>BL General Construction</title>
+        <title>Gilroy Concrete</title>
 
         <link rel="icon" type="image/x-icon" href="/static/img/icon.JPG">
         <link href="static/style.css" rel="stylesheet" type="text/css"/>
@@ -9,7 +9,6 @@
         <link href="static/contact.css" rel="stylesheet" type="text/css"/>
         <link href="static/about.css" rel="stylesheet" type="text/css"/>
         <link href="static/review.css" rel="stylesheet" type="text/css"/>
-
     </head>
 
 <body>
@@ -17,29 +16,40 @@
      <header>
         <!-- <h1>BL General Construction Inc.</h1> -->
         <nav>
-            <div><h1>BL General Construction Inc.</h1></div>
-            <ul>
-                <li><a href="#home">Home</a></li>
-                <li><a href="#projects">Projects</a></li>
-                <li><a href="#contact"#>Contact</a></li>
-                <li><a href="#review"#>Review</a></li>         
-                <select id="languageSelector">
-                    <option value="en">English</option>
-                    <option value="es">Spanish</option>
-                </select>
-            </ul>
-
-
+            <div class="header-title"><h1>Gilroy Concrete</h1></div>
+            <div class="hamburger" onclick="toggleMenu()">
+                &#9776;
+            </div>
+            <div class="nav-links" id="navLinks">
+                <div class="top-bar">
+                    <p><strong>📞 Call us:</strong> <a href="tel:+18312355895">(408) 843 - 8728</a></p>
+                </div>
+                <ul>
+                    <li><a href="#home">Home</a></li>
+                    <li><a href="#projects">Projects</a></li>
+                    <li><a href="#contact"#>Contact</a></li>
+                    <li><a href="#review"#>Review</a></li>         
+                    <select id="languageSelector">
+                        <option value="en">English</option>
+                        <option value="es">Spanish</option>
+                    </select>
+                </ul>
+            </div>
         </nav>
      </header>
 
      <section id="home" class="hero">
+        <div class="image-container">
+            <div class="main fade"> 
+                <img class="image-home" src="/static/img/concreteWebBG.jpg" width="1000" height="300">
+            </div>
         <div class="overlay"></div>
-        <h2 class="slogan pop-in">"Your Vision, Our Construction"</h2>
-        <img src="/static/img/constructionLogo.png" alt="BL General Construction Logo" class="pop-in">
-        <h2 class="pop-in">BL General Construction Inc.</h2>
 
-        <!-- <p>Remodeling | Garage Renovations | Framing | Drywall | Insulation & Painting | ADUs | New House </p> -->
+        <div class="logo-w-slogan">
+            <h2 class="slogan pop-in">"Your Vision, Our Construction"</h2>
+            <img src="/static/img/concreteCompanyLogo.png" alt="BL General Construction Logo" class="logo-img pop-in">
+            <h2 class="company-name pop-in">Gilroy Concrete</h2>
+                    <!-- <p>Remodeling | Garage Renovations | Framing | Drywall | Insulation & Painting | ADUs | New House </p> -->
         <section class="services pop-in">
             <div class="service-column">
               <p class="service1"></p>
@@ -54,10 +64,13 @@
               <p class="service6"></p>
             </div>
         </section>
-          
+        </div>
+
+        </div>
+
      </section>
 
-     <section id="projects">
+     <section id="projects" class="min-projects">
         <div class="slideshow-container">
             <div class="slide fade">        
                 <img src="/static/img/Projects/pictures/shelves.jpeg" alt="image 1">
@@ -103,7 +116,7 @@
      </section>
      <div class="phone">
         <p> 📞 <strong>Call us:</strong> 
-        <a href="tel:+1" >(831) 235 - 5895</a></p>
+        <a href="tel:+1" >(408) 843 - 8728</a></p>
     </div>
 <div class="sideBySideContainer">
     <section class="contactUsDescription">
@@ -113,8 +126,8 @@
             <p class="location"><strong></strong></p>
             <p class="locationMsg"></p>
           </div>
-        <p>BL General Construction Inc.</p>
-        <p class="contactPhone"><strong>Call Us:</strong></p><a href="tel:+1" >(831) 235 - 5895</a></p>
+        <p>Gilroy Concrete</p>
+        <p class="contactPhone"><strong>Call Us:</strong></p><a href="tel:+1" >(408) 843 - 8728</a></p>
     </section>
     <section id="contact"  class="contact-form">
         <!-- <id class="phone_info"><b><p>Contact Us:</b> (831) 235 - 5895 </p> </id> -->
@@ -164,7 +177,7 @@
 
             <button id="submitBtn" type="submit"></button>
         </form>
-    </section>
+    </section> 
     
       <!-- Display Reviews -->
   <div id="reviews-submission" style="margin-top: 30px;">
@@ -174,7 +187,7 @@
   </div>
 
     <!-- About the Owner Section -->
-    <!-- <section id="about">
+   <!-- <section id="about">
         <div class="about1"> -->
         
         <!-- Owner Image -->
@@ -196,6 +209,7 @@
          <button id="adminLoginBtn">Login as Admin</button>
          <button id="adminLogoutBtn" style="display: none;">Logout</button>
     </footer>
+    <script src="/static/script/home.js"></script>
     <script src="/static/script/projects.js"></script>
     <script src="/static/script/contact.js"></script>
     <script src="/static/script/review.js"></script>

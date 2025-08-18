@@ -1,7 +1,7 @@
 #projects {
     background-color: beige;
     display: flex;
-    flex-wrap: wrap;
+    /* flex-wrap: wrap; */
     padding: 3rem 2rem;
     gap: 2rem;
     justify-content: center;
@@ -52,9 +52,9 @@
 }
 
 .projects-info {
-    max-width: 500px;
-    font-size: 19px;
-    line-height: 1.6;
+    max-width: 494px;
+    font-size: 17px;
+    line-height: 1.4;
 }
 
 .projects-info h2 {
@@ -63,12 +63,12 @@
     margin-bottom: 1rem;
 }
 
-@media (max-width: 768px) {
+/* @media (max-width: 768px) {
     #projects {
       flex-direction: column;
       padding: 2rem 1rem;
     }
-  }
+} */
 
 .videos {
     position: relative;
@@ -76,6 +76,7 @@
     padding: 55px;
     width: 100%;
     max-width: 499px;
+    right: -28px;
 }
 
 .videoSlide img{

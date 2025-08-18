@@ -8,8 +8,8 @@ app = Flask(__name__)
 # BOT_TOKEN = ""
 # CHAT_ID = ""
 # Your email settings
-EMAIL_ADDRESS = "blconstruction1981@gmail.com"
-EMAIL_PASSWORD = "drbi rguk ikso xxpd"
+# EMAIL_ADDRESS = "blconstruction1981@gmail.com"
+# EMAIL_PASSWORD = "drbi rguk ikso xxpd"
 # EMAIL_ADDRESS = "" # enter gmail
 # EMAIL_PASSWORD = "" # Use app password, not your Gmail login, look up gmail settings
 # Telegram API URL
